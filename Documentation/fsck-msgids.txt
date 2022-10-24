@@ -1,133 +1,143 @@
---
-`badDate`;;
-	Invalid date format in an author/committer line.
+`badDate`::
+	(ERROR) Invalid date format in an author/committer line.
 
-`badEmail`;;
-	Invalid email format in an author/committer line.
+`badDateOverflow`::
+	(ERROR) Invalid date value in an author/committer line.
 
-`badFilemode`;;
-	A tree contains a bad filemode entry.
+`badEmail`::
+	(ERROR) Invalid email format in an author/committer line.
 
-`badName`;;
-	An author/committer name is empty.
+`badFilemode`::
+	(INFO) A tree contains a bad filemode entry.
 
-`badObjectSha1`;;
-	An object has a bad sha1.
+`badName`::
+	(ERROR) An author/committer name is empty.
 
-`badParentSha1`;;
-	A commit object has a bad parent sha1.
+`badObjectSha1`::
+	(ERROR) An object has a bad sha1.
 
-`badTagName`;;
-	A tag has an invalid format.
+`badParentSha1`::
+	(ERROR) A commit object has a bad parent sha1.
 
-`badTimezone`;;
-	Found an invalid time zone in an author/committer line.
+`badTagName`::
+	(INFO) A tag has an invalid format.
 
-`badTree`;;
-	A tree cannot be parsed.
+`badTimezone`::
+	(ERROR) Found an invalid time zone in an author/committer line.
 
-`badTreeSha1`;;
-	A tree has an invalid format.
+`badTree`::
+	(ERROR) A tree cannot be parsed.
 
-`badType`;;
-	Found an invalid object type.
+`badTreeSha1`::
+	(ERROR) A tree has an invalid format.
 
-`duplicateEntries`;;
-	A tree contains duplicate file entries.
+`badType`::
+	(ERROR) Found an invalid object type.
 
-`emptyName`;;
-	A path contains an empty name.
+`duplicateEntries`::
+	(ERROR) A tree contains duplicate file entries.
 
-`fullPathName`;;
-	A path contains the full path starting with "/".
+`emptyName`::
+	(WARN) A path contains an empty name.
 
-`gitAttributesSymlink`;;
-	`.gitattributes` is a symlink.
+`fullPathName`::
+	(WARN) A path contains the full path starting with "/".
 
-`gitignoreSymlink`;;
-	`.gitignore` is a symlink.
+`gitAttributesSymlink`::
+	(INFO) `.gitattributes` is a symlink.
 
-`gitmodulesBlob`;;
-	A non-blob found at `.gitmodules`.
+`gitignoreSymlink`::
+	(INFO) `.gitignore` is a symlink.
 
-`gitmodulesMissing`;;
-	Unable to read `.gitmodules` blob.
+`gitmodulesBlob`::
+	(ERROR) A non-blob found at `.gitmodules`.
 
-`gitmodulesName`;;
-	A submodule name is invalid.
+`gitmodulesMissing`::
+	(ERROR) Unable to read `.gitmodules` blob.
 
-`gitmodulesParse`;;
-	Could not parse `.gitmodules` blob.
+`gitmodulesName`::
+	(ERROR) A submodule name is invalid.
+
+`gitmodulesParse`::
+	(INFO) Could not parse `.gitmodules` blob.
 
 `gitmodulesLarge`;
-	`.gitmodules` blob is too large to parse.
+	(ERROR) `.gitmodules` blob is too large to parse.
 
-`gitmodulesPath`;;
-	`.gitmodules` path is invalid.
+`gitmodulesPath`::
+	(ERROR) `.gitmodules` path is invalid.
 
-`gitmodulesSymlink`;;
-	`.gitmodules` is a symlink.
+`gitmodulesSymlink`::
+	(ERROR) `.gitmodules` is a symlink.
 
-`gitmodulesUpdate`;;
-	Found an invalid submodule update setting.
+`gitmodulesUpdate`::
+	(ERROR) Found an invalid submodule update setting.
 
-`gitmodulesUrl`;;
-	Found an invalid submodule url.
+`gitmodulesUrl`::
+	(ERROR) Found an invalid submodule url.
 
-`hasDot`;;
-	A tree contains an entry named `.`.
+`hasDot`::
+	(WARN) A tree contains an entry named `.`.
 
-`hasDotdot`;;
-	A tree contains an entry named `..`.
+`hasDotdot`::
+	(WARN) A tree contains an entry named `..`.
 
-`hasDotgit`;;
-	A tree contains an entry named `.git`.
+`hasDotgit`::
+	(WARN) A tree contains an entry named `.git`.
 
-`mailmapSymlink`;;
-	`.mailmap` is a symlink.
+`mailmapSymlink`::
+	(WARN) `.mailmap` is a symlink.
 
-`missingAuthor`;;
-	Author is missing.
+`missingAuthor`::
+	(ERROR) Author is missing.
 
-`missingCommitter`;;
-	Committer is missing.
+`missingCommitter`::
+	(ERROR) Committer is missing.
 
-`missingEmail`;;
-	Email is missing in an author/committer line.
+`missingEmail`::
+	(ERROR) Email is missing in an author/committer line.
 
-`missingNameBeforeEmail`;;
-	Missing space before an email in an author/committer line.
+`missingNameBeforeEmail`::
+	(ERROR) Missing name before an email in an author/committer line.
 
-`missingObject`;;
-	Missing `object` line in tag object.
+`missingObject`::
+	(ERROR) Missing `object` line in tag object.
 
-`missingSpaceBeforeDate`;;
-	Missing space before date in an author/committer line.
+`missingSpaceBeforeDate`::
+	(ERROR) Missing space before date in an author/committer line.
 
-`missingSpaceBeforeEmail`;;
-	Missing space before the email in author/committer line.
+`missingSpaceBeforeEmail`::
+	(ERROR) Missing space before the email in author/committer line.
 
-`missingTag`;;
-	Unexpected end after `type` line in a tag object.
+`missingTag`::
+	(ERROR) Unexpected end after `type` line in a tag object.
 
-`missingTypeEntry`;;
-	Missing `type` line in a tag object.
+`missingTagEntry`::
+	(ERROR) Missing `tag` line in a tag object.
 
-`multipleAuthors`;;`
-	Multiple author lines found in a commit.
+`missingTypeEntry`::
+	(ERROR) Missing `type` line in a tag object.
 
-`nulInCommit`;;
-	Found a NUL byte in the commit object body.
+`multipleAuthors`::`
+	(ERROR) Multiple author lines found in a commit.
 
-`treeNotSorted`;;
-	A tree is not properly sorted.
+`nulInCommit`::
+	(WARN) Found a NUL byte in the commit object body.
 
-`unknownType`;;
-	Found an unknown object type.
+`nulInHeader`::
+	(FATAL) NUL byte exists in the object header.
 
-`zeroPaddingDate`;;
-	Found a zero padded date in an author/commiter line.
+`treeNotSorted`::
+	(ERROR) A tree is not properly sorted.
 
-`zeroPaddedFilemode`;;
-	Found a zero padded filemode in a tree.
---
+`unknownType`::
+	(ERROR) Found an unknown object type.
+
+`unterminatedHeader`::
+	(FATAL) Missing end-of-line in the object header.
+
+`zeroPaddingDate`::
+	(ERROR) Found a zero padded date in an author/commiter line.
+
+`zeroPaddedFilemode`::
+	(WARN) Found a zero padded filemode in a tree.

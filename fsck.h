@@ -13,6 +13,12 @@ enum fsck_msg_type {
 	FSCK_WARN,
 };
 
+/*
+ * Documentation/fsck-msgids.txt is meant to document these; when
+ * modifying this list in any way, make sure to make corresponding
+ * changes there, too, to keep them in sync.
+ */
+
 #define FOREACH_FSCK_MSG_ID(FUNC) \
 	/* fatal errors */ \
 	FUNC(NUL_IN_HEADER, FATAL) \
