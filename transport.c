@@ -23,6 +23,8 @@
 #include "object-store.h"
 #include "color.h"
 
+#include "instru.h"
+
 static int transport_use_color = -1;
 static char transport_colors[][COLOR_MAXLEN] = {
 	GIT_COLOR_RESET,
@@ -1430,6 +1432,8 @@ done:
 const struct ref *transport_get_remote_refs(struct transport *transport,
 					    struct transport_ls_refs_options *transport_options)
 {
+	instru_t1(INSTRU_transport_get_remote_refs);
+
 	if (!transport->got_remote_refs) {
 		transport->remote_refs =
 			transport->vtable->get_refs_list(transport, 0,
@@ -1437,6 +1441,7 @@ const struct ref *transport_get_remote_refs(struct transport *transport,
 		transport->got_remote_refs = 1;
 	}
 
+	instru_t2(INSTRU_transport_get_remote_refs);
 	return transport->remote_refs;
 }
 

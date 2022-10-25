@@ -2,6 +2,8 @@
 #include "exec-cmd.h"
 #include "attr.h"
 
+#include "instru.h"
+
 /*
  * Many parts of Git have subprograms communicate via pipe, expect the
  * upstream of a pipe to die with SIGPIPE when the downstream of a
@@ -25,6 +27,8 @@ static void restore_sigpipe_to_default(void)
 
 int main(int argc, const char **argv)
 {
+	instru_t1(INSTRU_main);
+
 	int result;
 	struct strbuf tmp = STRBUF_INIT;
 
@@ -56,7 +60,12 @@ int main(int argc, const char **argv)
 	result = cmd_main(argc, argv);
 
 	/* Not exit(3), but a wrapper calling our common_exit() */
-	exit(result);
+	int ret = common_exit(__FILE__, __LINE__, (result));
+
+	instru_t2(INSTRU_main);
+	instru_finalize();
+
+	exit(ret);
 }
 
 static void check_bug_if_BUG(void)

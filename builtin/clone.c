@@ -36,6 +36,8 @@
 #include "bundle.h"
 #include "bundle-uri.h"
 
+#include "instru.h"
+
 /*
  * Overall FIXMEs:
  *  - respect DB_ENVIRONMENT for .git/objects.
@@ -884,6 +886,8 @@ static int path_exists(const char *path)
 
 int cmd_clone(int argc, const char **argv, const char *prefix)
 {
+	instru_t1(INSTRU_cmd_clone);
+
 	int is_bundle = 0, is_local;
 	int reject_shallow = 0;
 	const char *repo_name, *repo, *work_tree, *git_dir;
@@ -1394,5 +1398,7 @@ int cmd_clone(int argc, const char **argv, const char *prefix)
 	junk_mode = JUNK_LEAVE_ALL;
 
 	transport_ls_refs_options_release(&transport_ls_refs_options);
+
+	instru_t2(INSTRU_cmd_clone);
 	return err;
 }
